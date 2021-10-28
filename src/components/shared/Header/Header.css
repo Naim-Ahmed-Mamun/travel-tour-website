@@ -1,0 +1,18 @@
+.navBar_container{
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+}
+.navbar-nav{
+    align-items: center;
+}
+.nav_menu a{
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-weight: 500;
+}
