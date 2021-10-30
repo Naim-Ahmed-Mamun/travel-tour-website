@@ -1,0 +1,11 @@
+.recent_trips{
+    padding: 100px 0;
+}
+.card img {
+    height: 300px;
+}
+.card-body .blog_text {
+    font-family: var(--paragraph-font);
+    color: var(--paragraph-color);
+    height: auto;
+}

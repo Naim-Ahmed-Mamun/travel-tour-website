@@ -1,16 +1,16 @@
-import React from 'react';
-// import { useForm } from "react-hook-form";
-import './Login.css';
-import loginImg from '../../../img/login.svg';
-import useAuth from '../../../Hooks/useAuth';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { Link, useLocation, useHistory } from 'react-router-dom';
-// import { Form } from 'react-bootstrap';
+import { faEnvelope, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+// import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+import registerImg from '../../img/register.svg'
+import './Register.css';
+import { useLocation, useHistory } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
    // location
    const location = useLocation();
    // history
@@ -18,9 +18,15 @@ const Login = () => {
    // redirect uri
    const redirect_uri = location.state?.from || '/home';
    // use auth
-   const { setEmail, setPassword, signInUsingGoogle, setUser, setError, signInUsingFb,
-   signInUsingGithub,error,loginUsingEmailPassword } = useAuth();
+   const { setName, setEmail, setPassword, registerUserUsingEmailPassword, setUser, error,
+   setError,registerUpdateUser,verifyEmail,signInUsingGoogle,signInUsingFb,signInUsingGithub } = useAuth();
+   // use form 
+   // const { register, handleSubmit, reset } = useForm();
 
+   // handleName
+   const handleName = (e) => {
+      setName(e.target.value)
+   }
    // handleEmail
    const handleEmail = (e) => {
       setEmail(e.target.value)
@@ -29,34 +35,39 @@ const Login = () => {
    const handlePassword = (e) => {
       setPassword(e.target.value)
    }
-
-   // handleSubmit
-   const handleSubmit = (e) => {
+   // handleRegister
+   const handleRegister = (e) => {
       e.preventDefault()
-      loginUsingEmailPassword()
-      .then(result => {
-         setUser(result.user);
-         history.push(redirect_uri)
-     })
-     .catch(err => {
-         setError(err.message)
-     })
+      registerUserUsingEmailPassword()
+         .then(result => {
+            setUser(result.user);
+            registerUpdateUser();
+            verifyEmail();
+            history.push(redirect_uri)
+            console.log(result.user);
+         })
+         .catch(err => {
+            setError(err.message)
+            console.log(err.message);
+         })
    }
+   setTimeout(() => {
+      setError('')
+   }, 5000);
 
    // handle Google SignIn
    const handleGoogleSignIn = () => {
       signInUsingGoogle()
-         .then(result => {
-            setUser(result.user)
-            history.push(redirect_uri)
-         })
-         .catch(err => {
-            setError(err.message);
-         })
+      .then(result => {
+         setUser(result.user)
+         history.push(redirect_uri)
+      })
+      .catch(err => {
+         setError(err.message);
+      })
    }
-
-   // handle Fb sign In
-   const handleFbSignIn = () => {
+    // handle Fb sign In
+    const handleFbSignIn = () => {
       signInUsingFb()
          .then(result => {
             setUser(result.user)
@@ -66,6 +77,7 @@ const Login = () => {
             setError(err.message)
          })
    }
+
 
    // handle Github Sign In
    const handleGithubSignIn = () => {
@@ -78,34 +90,37 @@ const Login = () => {
          setError(err.message)
      })
    }
-   setTimeout(() => {
-      setError('')
-   }, 5000);
    return (
       <>
-      <div className="login_bg"></div>
-         <div className="login_section">
+      <div className="register_banner"></div>
+         <div className="register_section">
             <div className="container">
                <div className="row align-items-center">
                   <div className="col-lg-6">
-                     <div className="login_img">
-                        <img src={loginImg} alt="" />
+                     <div className="register_img">
+                        <img src={registerImg} alt="" />
                      </div>
-                     <Link to="/register"><p className="register">Create An Account</p></Link>
+                     <div className="text-center login_link">
+                        <span>Already have an account ?</span> <Link to="/login"> Login</Link>
+                     </div>
                   </div>
                   <div className="col-lg-6">
                      <div className="login_form">
-                        <h2>Log In</h2>
-                        <form onSubmit={handleSubmit}>
+                        <h2>Register</h2>
+                        <form onSubmit={handleRegister}>
                            <span>
-                              <FontAwesomeIcon className="icon" icon={faEnvelope} /> <input onChange={handleEmail}
-                                 placeholder="Email" />
+                              <FontAwesomeIcon className="icon" icon={faUser} /> <input type="text" 
+                              onChange={handleName} placeholder="Name" />
+                           </span>
+                           <span>
+                              <FontAwesomeIcon className="icon" icon={faEnvelope} /> <input type="email" 
+                              onChange={handleEmail} placeholder="Email" />
                            </span>
                            <span>
                               <FontAwesomeIcon className="icon" icon={faLock} /> <input type="password"
-                               onChange={handlePassword}  placeholder="Password" />
+                                onChange={handlePassword} placeholder="Password" />
                            </span>
-                           <p id="error" className="text-danger">{error}</p>
+                           <p className="text-danger">{error}</p>
                            <div className="row my-3">
                               <div className="col-lg-6">
                                  <div className="mb-3 form-check">
@@ -117,7 +132,7 @@ const Login = () => {
                                  <p className="forgot_text">Forgot Password</p>
                               </div>
                            </div>
-                           <input type="submit" value="Login" />
+                           <input type="submit" value="Register" />
                         </form>
                         <div className="other_login d-flex align-items-center mt-5">
                            <span>Or Login With : </span>
@@ -140,4 +155,4 @@ const Login = () => {
    );
 };
 
-export default Login;
+export default Register;

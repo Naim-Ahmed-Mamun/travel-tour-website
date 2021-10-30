@@ -17,8 +17,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: var(--white-color);
-    opacity: 0.6;
+    background: rgba(0, 0, 0, 0.6);
 }
 .heroBanner_section .container{
     position: relative;
@@ -31,12 +30,12 @@
 }
 .hero_content h2 {
     font-size: 60px;
-    color: var(--dark-blue);
+    color: var(--white-color);
 }
 .hero_content p{
     font-size: 18px;
     font-weight: 400;
     margin: 15px 0 20px;
-    color: var(--dark-blue);
+    color: var(--white-color);
     font-family: var(--paragraph-font) ;
 }

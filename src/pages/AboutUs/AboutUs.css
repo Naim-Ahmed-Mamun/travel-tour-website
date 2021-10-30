@@ -1,3 +1,17 @@
+.about_banner{
+    background: url(../../img/about-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about_banner h2{
+    font-size: 28px;
+    color: white;
+    margin-top: 25px;
+}
 .aboutUs_section{
     padding: 100px 0;
 }

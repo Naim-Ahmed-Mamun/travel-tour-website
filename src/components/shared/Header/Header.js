@@ -1,31 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../../img/travel_logo.webp';
+import useAuth from '../../../Hooks/useAuth';
+import logo from '../../../img/white-logo.webp';
 import './Header.css';
 
 const Header = () => {
+   const { user,logout } = useAuth();
+   const [sticky,setSticky] = useState(false);
+   const handleSticky = () => {
+      if(window.scrollY > 50){
+         setSticky(true)
+      }
+      else{
+         setSticky(false)
+      }
+   }
+   window.addEventListener('scroll',handleSticky)
    return (
       <>
-         <div className="navBar_container">
+         <div className={sticky ? `sticky_nav navBar_container` : 'navBar_container'}>
             <Navbar collapseOnSelect expand="lg" variant="dark">
                <Container>
                   <Navbar.Brand href="#home"><img src={logo} alt="" /></Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                      <Nav className="ms-auto nav_menu">
-                        <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/about">About Us</NavLink>
-                        <NavLink to="/myOrder">My Orders</NavLink>
-                        <NavLink to="/manageAllOrders">Manage All Orders</NavLink>
-                        <NavLink to="/addService">Add Service</NavLink>
-                        <NavLink to="/blog">Blog</NavLink>
-                        <NavLink to="/contact">Contact</NavLink>
-                        <div className="login-btn">
-                           <Link to="/login">
-                              <button className="regular_btn">Login</button>
-                           </Link>
-                        </div>
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/home">Home</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/about">About</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/allDestinations">All Destinations</NavLink>
+                        {user.email && 
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/myOrder">My Orders</NavLink>}
+                        {user.email && 
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/manageAllOrders">Manage All Orders</NavLink>}
+                        {user.email && 
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/addDestination">
+                         Add Destination</NavLink>}
+                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/contact">Contact</NavLink>
+                        {user.email ? <div>
+                           <strong style={{color:'#1EC6B6'}}>Hi! {user?.displayName} </strong>
+                           <button onClick={logout} className="regular_btn">Logout</button>
+                        </div> :
+                           <div className="login-btn">
+                              <Link to="/login">
+                                 <button className="regular_btn">Login</button>
+                              </Link>
+                           </div>}
                      </Nav>
                   </Navbar.Collapse>
                </Container>

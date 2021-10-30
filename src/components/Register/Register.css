@@ -1,0 +1,19 @@
+.register_banner{
+    background: url(../../img/sign-up-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25vh;
+}
+.register_section{
+    padding: 150px 0 100px;
+}
+.login_form h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: var(--dark-blue);
+}
+.login_link{
+    font-size: 18px;
+    font-weight: 500;
+}

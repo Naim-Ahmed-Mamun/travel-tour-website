@@ -1,10 +1,13 @@
 import React from 'react';
 import './AboutUs.css';
-import aboutImg from '../../../img/about_img.svg';
+import aboutImg from '../../img/about_img.svg';
 
 const AboutUs = () => {
    return (
       <>
+      <div className="about_banner">
+         <h2>About Us</h2>
+      </div>
          <div className="aboutUs_section">
             <div className="container">
                <div className="row align-items-center">

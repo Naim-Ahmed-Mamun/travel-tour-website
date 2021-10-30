@@ -1,0 +1,19 @@
+.bookingRegistration_banner{
+    background: url(../../img/sign-up-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25vh;
+}
+.bookingRegistration_section{
+    padding: 150px 0 100px;
+}
+.bookingRegistration_form{
+    max-width: 650px;
+    margin: 0 auto;
+}
+.bookingRegistration_form h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 25px;
+    color: var(--dark-blue);
+}

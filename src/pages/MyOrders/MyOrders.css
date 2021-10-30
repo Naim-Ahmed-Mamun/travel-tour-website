@@ -1,0 +1,20 @@
+.myOrder_banner{
+    background: url(../../img/myOrder-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 35vh;
+}
+.myOrder_section{
+    padding: 150px 0 100px;
+}
+.booking_img img{
+    height: 100%;
+}
+.card-body{
+    padding: 12px;
+}
+.card-body .card_title{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
