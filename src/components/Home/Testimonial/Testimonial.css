@@ -25,3 +25,12 @@
 /* .testi_content .traveler{
 
 } */
+
+/* ------media query ----------------- */
+
+/* ----small mobile device ---------- */
+@media (max-width:576px){
+    .testi_content .feedback {
+        height: auto;
+    }
+}

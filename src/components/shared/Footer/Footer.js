@@ -52,7 +52,7 @@ const Footer = () => {
                         <div className="footer_logo mb-4">
                            <img src={logo} alt="" />
                         </div>
-                        <p>5th flora, 700/D kings road, green
+                        <p className="address">5th flora, 700/D kings road, green
                            lane New York-1782</p>
                         <p>Phone: +10 367 826 2567</p>
                         <p>Email: demo@email.com</p>

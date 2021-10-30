@@ -3,6 +3,16 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 25vh;
+    position: relative;
+}
+.bookingRegistration_banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 .bookingRegistration_section{
     padding: 150px 0 100px;
@@ -16,4 +26,13 @@
     font-weight: 600;
     margin: 0 0 25px;
     color: var(--dark-blue);
+}
+
+/* ------media query ----------------- */
+
+/* ----small mobile device ---------- */
+@media (max-width:375px){
+    .bookingRegistration_form h2 {
+        font-size: 22px;
+    }
 }

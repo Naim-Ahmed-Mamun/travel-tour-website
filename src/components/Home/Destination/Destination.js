@@ -8,17 +8,19 @@ import './Destination.css';
 const Destination = () => {
    const [destinations, setDestinations] = useState([]);
    const [isLoading,setIsLoading] = useState(true);
-   if(isLoading){
-      <Spinner animation="border" />
-   }
+   
    useEffect(() => {
       fetch('https://thawing-bayou-70947.herokuapp.com/destinations')
          .then(res => res.json())
          .then(data => {
             setDestinations(data);
-            setIsLoading(false)
+               setIsLoading(false)
          })
    }, [])
+
+   if(isLoading){
+     return <div className="text-center my-5"><Spinner animation="border" /></div>
+   }
    return (
       <>
          <div className="destination_section">

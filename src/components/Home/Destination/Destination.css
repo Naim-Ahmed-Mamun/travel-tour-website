@@ -53,3 +53,18 @@
     color: var(--paragraph-color);
     height: 100px;
 }
+
+/* ------media query ----------------- */
+
+/* ---- mobile device ---------- */
+@media (max-width:576px){
+    .card-body .card_desc {
+        height: auto;
+    }
+}
+/* ----small mobile device ---------- */
+@media (max-width:375px){
+    .card-body .card-title {
+        font-size: 22px;
+    }
+}

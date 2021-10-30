@@ -3,6 +3,16 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 35vh;
+    position: relative;
+}
+.myOrder_banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
 }
 .myOrder_section{
     padding: 150px 0 100px;

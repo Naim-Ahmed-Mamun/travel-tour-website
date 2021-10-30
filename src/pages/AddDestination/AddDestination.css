@@ -3,6 +3,16 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 35vh;
+    position: relative;
+}
+.addDestination_banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
 }
 .addDestination_section{
     height: 100vh;
@@ -38,4 +48,17 @@ form input[type="submit"]{
 }
 form input:focus{
     outline: none;
+}
+
+/* ------media query ----------------- */
+
+/* ----small mobile device ---------- */
+@media (max-width:576px){
+    .addDestination_section {
+        height: auto;
+        padding: 100px 0;
+    }
+    .addDestination_form {
+        padding: 40px 30px;
+    }
 }

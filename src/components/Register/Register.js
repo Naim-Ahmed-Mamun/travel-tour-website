@@ -95,7 +95,7 @@ const Register = () => {
       <div className="register_banner"></div>
          <div className="register_section">
             <div className="container">
-               <div className="row align-items-center">
+               <div className="row align-items-center register_wrapper">
                   <div className="col-lg-6">
                      <div className="register_img">
                         <img src={registerImg} alt="" />
@@ -121,14 +121,14 @@ const Register = () => {
                                 onChange={handlePassword} placeholder="Password" />
                            </span>
                            <p className="text-danger">{error}</p>
-                           <div className="row my-3">
-                              <div className="col-lg-6">
+                           <div className="row my-3 align-items-center">
+                              <div className="col-lg-6 col-6">
                                  <div className="mb-3 form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                     <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
                                  </div>
                               </div>
-                              <div className="col-lg-6 text-end">
+                              <div className="col-lg-6 col-6 text-end">
                                  <p className="forgot_text">Forgot Password</p>
                               </div>
                            </div>

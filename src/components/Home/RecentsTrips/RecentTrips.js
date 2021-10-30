@@ -38,7 +38,7 @@ const RecentTrips = () => {
             {
               blogData.map(blog => {
                 return (
-                  <div key={blog.id} className="col-lg-4">
+                  <div key={blog.id} className="col-lg-4 mb-4">
                     <Card>
                       <Card.Img variant="top" src={blog.img} />
                       <Card.Body>

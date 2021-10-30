@@ -1,5 +1,5 @@
 .navBar_container{
-    padding: 15px 0;
+    padding: 12px 0;
     position: absolute;
     top: 0;
     right: 0;
@@ -22,7 +22,33 @@
     color: var(--white-color);
     font-size: 18px;
     font-weight: 500;
+    transition: 0.3s;
+}
+.nav_menu a:hover{
+    color: var(--yellow-color);
 }
 .sticky_nav .nav_menu a{
     color: var(--dark-blue);
+}
+
+/* ---------media query--------- */
+
+@media (max-width:991px){
+    #responsive-navbar-nav {
+        background: white;
+        padding: 50px 22px;
+    }
+    .navbar-nav {
+        align-items: start;
+    }
+    .nav_menu a {
+        margin: 0px 0 15px;
+        color: var(--dark-blue);
+    }
+    .navbar-dark .navbar-toggler-icon {
+        background-image: url(../../../img/manu_bar.svg) !important;
+    }
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
 }

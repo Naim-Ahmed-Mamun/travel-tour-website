@@ -10,7 +10,7 @@ const AboutUs = () => {
       </div>
          <div className="aboutUs_section">
             <div className="container">
-               <div className="row align-items-center">
+               <div className="row align-items-center about_wrapper">
                   <div className="col-lg-6">
                      <div className="about_img">
                         <img src={aboutImg} alt="" />

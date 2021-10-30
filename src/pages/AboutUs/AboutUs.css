@@ -6,11 +6,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.about_banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
 }
 .about_banner h2{
     font-size: 28px;
     color: white;
     margin-top: 25px;
+    position: relative;
+    z-index: 2;
 }
 .aboutUs_section{
     padding: 100px 0;
@@ -33,4 +45,32 @@
     line-height: 28px;
     margin-bottom: 20px;
     color: var(--paragraph-color);
+}
+
+/* ------media query ----------------- */
+/* ---- mobile device ---------- */
+@media (max-width:576px){
+    .about_wrapper{
+        flex-direction: column-reverse;
+    }
+    .about_banner h2 {
+        margin-top: 55px;
+    }
+    .about_img {
+        padding-top: 50px;
+    }
+}
+@media (min-width:375px) and (max-width:576px){
+    .about_content h2 {
+        font-size: 42px;
+    }
+}
+/* ----small mobile device ---------- */
+@media (max-width:375px){ 
+    .about_content h2 {
+        font-size: 28px;
+    }
+    .about_content p {
+        font-size: 16px;
+    }
 }

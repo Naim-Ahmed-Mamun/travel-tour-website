@@ -14,3 +14,16 @@ h2.accordion-header button {
     font-family: var(--paragraph-font);
     color: var(--paragraph-color);
 }
+
+/* ------media query ----------------- */
+
+/* ----small mobile device ---------- */
+@media (max-width:375px){
+    h2.accordion-header button {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .faq_img {
+        padding-top: 50px;
+    }
+}

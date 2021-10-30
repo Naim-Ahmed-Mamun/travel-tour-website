@@ -1,5 +1,5 @@
 .recent_trips{
-    padding: 100px 0;
+    padding: 0px 0 100px;
 }
 .card img {
     height: 300px;
@@ -8,4 +8,23 @@
     font-family: var(--paragraph-font);
     color: var(--paragraph-color);
     height: auto;
+}
+
+/* ------media query ----------------- */
+
+/* ----small mobile device ---------- */
+
+@media (min-width:330px) and (max-width:375px){
+    .hero_content h2 {
+        font-size: 30px;
+    }
+}
+@media (max-width:330px){
+    .hero_content h2 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .hero_content p {
+        line-height: 30px;
+    }
 }

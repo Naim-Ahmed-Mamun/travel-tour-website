@@ -86,7 +86,7 @@ const Login = () => {
       <div className="login_bg"></div>
          <div className="login_section">
             <div className="container">
-               <div className="row align-items-center">
+               <div className="row align-items-center login_wrapper">
                   <div className="col-lg-6">
                      <div className="login_img">
                         <img src={loginImg} alt="" />
@@ -106,14 +106,14 @@ const Login = () => {
                                onChange={handlePassword}  placeholder="Password" />
                            </span>
                            <p id="error" className="text-danger">{error}</p>
-                           <div className="row my-3">
-                              <div className="col-lg-6">
+                           <div className="row align-items-center my-3">
+                              <div className="col-lg-6 col-6">
                                  <div className="mb-3 form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                     <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
                                  </div>
                               </div>
-                              <div className="col-lg-6 text-end">
+                              <div className="col-lg-6 col-6 text-end">
                                  <p className="forgot_text">Forgot Password</p>
                               </div>
                            </div>

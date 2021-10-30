@@ -3,6 +3,16 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 25vh;
+    position: relative;
+}
+.login_bg::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 .login_section{
     padding: 100px 0;
@@ -71,4 +81,22 @@
 }
 .other_login .login .login_icon{
     color: white;
+}
+
+/* ------media query ----------------- */
+
+/* ---- mobile device ---------- */
+@media (max-width:576px){
+    .login_wrapper{
+        flex-direction: column-reverse;
+    }
+}
+/* ----small mobile device ---------- */
+@media (max-width:375px){
+    .form-check label {
+        font-size: 14px;
+    }
+    .forgot_text {
+        font-size: 14px;
+    }
 }

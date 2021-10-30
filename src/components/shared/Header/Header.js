@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../img/white-logo.webp';
+import blackLogo from '../../../img/travel_logo.webp';
 import './Header.css';
 
 const Header = () => {
@@ -22,21 +23,23 @@ const Header = () => {
          <div className={sticky ? `sticky_nav navBar_container` : 'navBar_container'}>
             <Navbar collapseOnSelect expand="lg" variant="dark">
                <Container>
-                  <Navbar.Brand href="#home"><img src={logo} alt="" /></Navbar.Brand>
+                  <Navbar.Brand href="#home">
+                     {sticky ? <img src={blackLogo} alt="" /> : <img src={logo} alt="" />}
+                  </Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                      <Nav className="ms-auto nav_menu">
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/home">Home</NavLink>
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/about">About</NavLink>
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/allDestinations">All Destinations</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/home">Home</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/about">About</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/allDestinations">All Destinations</NavLink>
                         {user.email && 
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/myOrder">My Orders</NavLink>}
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/myOrder">My Orders</NavLink>}
                         {user.email && 
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/manageAllOrders">Manage All Orders</NavLink>}
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/manageAllOrders">Manage All Orders</NavLink>}
                         {user.email && 
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/addDestination">
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/addDestination">
                          Add Destination</NavLink>}
-                        <NavLink activeStyle={{borderBottom:'1px solid #1EC6B6'}} to="/contact">Contact</NavLink>
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/contact">Contact</NavLink>
                         {user.email ? <div>
                            <strong style={{color:'#1EC6B6'}}>Hi! {user?.displayName} </strong>
                            <button onClick={logout} className="regular_btn">Logout</button>
