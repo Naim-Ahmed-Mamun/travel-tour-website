@@ -95,7 +95,7 @@ const Register = () => {
       <div className="register_banner"></div>
          <div className="register_section">
             <div className="container">
-               <div className="row align-items-center register_wrapper">
+               <div className="row align-items-center register_wrapper" data-aos="fade-up">
                   <div className="col-lg-6">
                      <div className="register_img">
                         <img src={registerImg} alt="" />

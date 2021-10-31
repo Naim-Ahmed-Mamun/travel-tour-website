@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import './bookingRegistration.css';
 
 const BookingRegistration = () => {
+   // booking state
    const [bookingOrder,setOrderBooking] = useState({});
+   // use auth
    const {user} = useAuth()
+   // params id
    const {id} = useParams();
+   // hook form
    const { register, handleSubmit,reset } = useForm();
+   // use history
+   const history = useHistory();
 
    // load dynamic data
    useEffect(() => {
@@ -36,6 +42,7 @@ const BookingRegistration = () => {
       .then(result => {
          if(result.acknowledged){
             alert('Booking successfully')
+            history.push('/myOrder')
          }
          console.log(result);
       })
@@ -47,7 +54,7 @@ const BookingRegistration = () => {
       <div className="bookingRegistration_banner"></div>
          <div className="bookingRegistration_section">
             <div className="container">
-               <div className="bookingRegistration_form">
+               <div className="bookingRegistration_form" data-aos="fade-up">
                   <h2>Register as a Travelo Tour</h2>
                   <form onSubmit={handleSubmit(onSubmit)}>
                      <input defaultValue={user?.displayName} {...register("name")} placeholder="Name" />

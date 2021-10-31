@@ -31,13 +31,13 @@ const Contact = () => {
    return (
       <>
          <div className="contact_banner">
-            <h3>Contact</h3>
+            <div data-aos="fade-up"><h3>Contact</h3></div>
          </div>
          <div className="contact_wrapper">
             <div className="container">
-               <div className="row my-5">
+               <div className="row my-5" data-aos="fade-up">
                   {
-                     contactData.map(contactItem => <div key={contactItem.id} className="col-lg-4">
+                     contactData.map(contactItem => <div key={contactItem.id} className="col-lg-4 mb-3">
                         <div className="contact_item shadow p-4 d-flex">
                            <div className="contact_icon">
                               <i>{contactItem.icon}</i>
@@ -51,7 +51,7 @@ const Contact = () => {
                      </div>)
                   }
                </div>
-               <div className="row mt-5 align-items-center">
+               <div className="row mt-5 align-items-center" data-aos="fade-up">
                   <div className="col-lg-6">
                      <div className="contact-img">
                         <img src={contactImg} alt="" />

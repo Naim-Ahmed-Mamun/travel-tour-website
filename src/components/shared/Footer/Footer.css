@@ -37,9 +37,6 @@
 
 /* ----small mobile device ---------- */
 @media (max-width:576px){
-    .footer_item {
-        margin-bottom: 35px;
-    }
     .address{
         max-width: 250px;
     }

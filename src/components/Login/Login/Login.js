@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useForm } from "react-hook-form";
 import './Login.css';
 import loginImg from '../../../img/login.svg';
 import useAuth from '../../../Hooks/useAuth';
@@ -8,7 +7,6 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation, useHistory } from 'react-router-dom';
-// import { Form } from 'react-bootstrap';
 
 const Login = () => {
    // location
@@ -16,7 +14,7 @@ const Login = () => {
    // history
    const history = useHistory();
    // redirect uri
-   const redirect_uri = location.state?.from || '/home';
+   const redirect_uri = location?.state?.from || '/home';
    // use auth
    const { setEmail, setPassword, signInUsingGoogle, setUser, setError, signInUsingFb,
    signInUsingGithub,error,loginUsingEmailPassword } = useAuth();
@@ -78,6 +76,7 @@ const Login = () => {
          setError(err.message)
      })
    }
+   // set time for error
    setTimeout(() => {
       setError('')
    }, 5000);
@@ -86,7 +85,7 @@ const Login = () => {
       <div className="login_bg"></div>
          <div className="login_section">
             <div className="container">
-               <div className="row align-items-center login_wrapper">
+               <div className="row align-items-center login_wrapper" data-aos="fade-up">
                   <div className="col-lg-6">
                      <div className="login_img">
                         <img src={loginImg} alt="" />

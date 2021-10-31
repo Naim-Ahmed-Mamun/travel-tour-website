@@ -1,15 +1,20 @@
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
    const [allUsersBooking, setAllUsersBooking] = useState([]);
    const [isPending,setIsPending] = useState(false);
+   const [isLoading,setIsLoading] = useState(true);
    useEffect(() => {
       fetch(`https://thawing-bayou-70947.herokuapp.com/bookingAllUsers`)
          .then(res => res.json())
-         .then(data => setAllUsersBooking(data))
+         .then(data => {
+            setAllUsersBooking(data)
+            setIsLoading()
+         })
    }, [isPending]);
 
    // handleDelete
@@ -46,10 +51,11 @@ const ManageAllOrders = () => {
          <div className="manageAllOrders_section">
             <div className="container">
                <div className="row">
+               {isLoading && <div className="text-center my-5"><Spinner animation="border" /></div>}
                   {
                      allUsersBooking.map(allBooking => {
                         return (
-                           <div key={allBooking._id} className="col-lg-4">
+                           <div key={allBooking._id} className="col-lg-4" data-aos="fade-up">
                               <div className="card mb-3">
                                  <div className="row g-0">
                                     <div className="col-md-5 booking_img">

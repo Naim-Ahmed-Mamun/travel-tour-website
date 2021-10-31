@@ -23,7 +23,7 @@ const Header = () => {
          <div className={sticky ? `sticky_nav navBar_container` : 'navBar_container'}>
             <Navbar collapseOnSelect expand="lg" variant="dark">
                <Container>
-                  <Navbar.Brand href="#home">
+                  <Navbar.Brand href="/home">
                      {sticky ? <img src={blackLogo} alt="" /> : <img src={logo} alt="" />}
                   </Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,17 +31,16 @@ const Header = () => {
                      <Nav className="ms-auto nav_menu">
                         <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/home">Home</NavLink>
                         <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/about">About</NavLink>
-                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/allDestinations">All Destinations</NavLink>
                         {user.email && 
                         <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/myOrder">My Orders</NavLink>}
                         {user.email && 
-                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/manageAllOrders">Manage All Orders</NavLink>}
+                        <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/manageAllOrders">All Orders</NavLink>}
                         {user.email && 
                         <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/addDestination">
                          Add Destination</NavLink>}
                         <NavLink activeStyle={{borderBottom:'1px solid #FF4A52'}} to="/contact">Contact</NavLink>
                         {user.email ? <div>
-                           <strong style={{color:'#1EC6B6'}}>Hi! {user?.displayName} </strong>
+                           <strong style={{color:'#00D690'}}>Hi! {user?.displayName} </strong>
                            <button onClick={logout} className="regular_btn">Logout</button>
                         </div> :
                            <div className="login-btn">

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import './MyOrders.css';
 
 const MyOrders = () => {
    const [userBooking, setUserBooking] = useState([]);
+   const [isLoading,setIsLoading] = useState(true);
    const { user } = useAuth();
    const userEmail = user?.email;
    console.log(userEmail);
@@ -13,6 +15,7 @@ const MyOrders = () => {
          .then(res => res.json())
          .then(data => {
             setUserBooking(data);
+            setIsLoading(false)
          })
    }, [userEmail])
 
@@ -36,7 +39,8 @@ const MyOrders = () => {
       <div className="myOrder_banner"></div>
          <div className="myOrder_section">
             <div className="container">
-               <div className="row">
+               <div className="row" data-aos="fade-up">
+               {isLoading && <div className="text-center my-5"><Spinner animation="border" /></div>}
                   {
                      userBooking.map(booking => {
                         return (

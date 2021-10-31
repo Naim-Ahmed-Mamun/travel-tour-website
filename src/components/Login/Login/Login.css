@@ -86,7 +86,7 @@
 /* ------media query ----------------- */
 
 /* ---- mobile device ---------- */
-@media (max-width:576px){
+@media (max-width:768px){
     .login_wrapper{
         flex-direction: column-reverse;
     }

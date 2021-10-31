@@ -8,10 +8,10 @@ const Faq = () => {
       <>
          <div className="faq_section">
             <div className="container">
-               <div className="sec_title">
+               <div className="sec_title" data-aos="fade-up">
                   <h2>FAQ</h2>
                </div>
-               <div className="row mt-5 align-items-center">
+               <div className="row mt-5 align-items-center" data-aos="fade-up">
                   <div className="col-lg-6">
                      <div className="faq_content">
                         <Accordion defaultActiveKey="0">

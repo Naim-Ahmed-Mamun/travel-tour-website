@@ -29,7 +29,7 @@
     text-align: center;
 }
 .hero_content h2 {
-    font-size: 65px;
+    font-size: 60px;
     color: var(--white-color);
     font-weight: 700;
 }
@@ -43,6 +43,13 @@
 
 /* ------media query ----------------- */
 
+/* ---- tablet  device ---------- */
+@media (min-width:576px) and (max-width:768px){
+    .hero_content h2 {
+        font-size: 46px;
+        line-height: 65px;
+    }
+}
 /* ---- mobile device ---------- */
 @media (min-width:375px) and (max-width:576px){
     .hero_content {

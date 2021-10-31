@@ -49,7 +49,7 @@
 
 /* ------media query ----------------- */
 /* ---- mobile device ---------- */
-@media (max-width:576px){
+@media (max-width:768px){
     .about_wrapper{
         flex-direction: column-reverse;
     }
@@ -60,12 +60,13 @@
         padding-top: 50px;
     }
 }
+
+/* ----small mobile device ---------- */
 @media (min-width:375px) and (max-width:576px){
     .about_content h2 {
         font-size: 42px;
     }
 }
-/* ----small mobile device ---------- */
 @media (max-width:375px){ 
     .about_content h2 {
         font-size: 28px;

@@ -32,14 +32,14 @@ const Testimonial = () => {
       <>
          <div className="testimonial_section">
             <div className="container">
-               <div className="sec_title">
+               <div className="sec_title" data-aos="fade-up">
                   <h2>Testimonials</h2>
                </div>
                <div className="row mt-5">
                   {
                      testimonialData.map(testimonial => {
                         return (
-                           <div key={testimonial.id} className="col-lg-4">
+                           <div key={testimonial.id} className="col-lg-4 mb-3" data-aos="fade-up">
                               <div className="shadow p-3">
                                  <div className="testi_img">
                                     <img src={testimonial.img} alt="" />

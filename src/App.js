@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './App.css';
 import Header from './components/shared/Header/Header';
 import Home from './components/Home/Home/Home';
-import './App.css';
 import Footer from './components/shared/Footer/Footer';
 import AddDestination from './pages/AddDestination/AddDestination';
 import Destination from './components/Home/Destination/Destination';
@@ -14,9 +17,15 @@ import MyOrders from './pages/MyOrders/MyOrders';
 import ManageAllOrders from './pages/ManageAllOrders/ManageAllOrders';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
-import AllDestinations from './pages/AllDestinations/AllDestinations';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
+   // aos animation
+   useEffect(() => {
+      AOS.init({
+         duration:1600
+      })
+   },[])
    return (
       <>
          <AuthProvider>
@@ -26,14 +35,11 @@ function App() {
                   <Route exact path="/">
                      <Home></Home>
                   </Route>
-                  <Route path="/home">
+                  <Route exact path="/home">
                      <Home></Home>
                   </Route>
                   <Route path="/about">
                      <AboutUs></AboutUs>
-                  </Route>
-                  <Route path="/allDestinations">
-                     <AllDestinations></AllDestinations>
                   </Route>
                   <Route path="/destination">
                      <Destination></Destination>
@@ -58,6 +64,9 @@ function App() {
                   </Route>
                   <Route path="/contact">
                     <Contact></Contact>
+                  </Route>
+                  <Route path="*">
+                    <NotFound></NotFound>
                   </Route>
                </Switch>
                <Footer></Footer>

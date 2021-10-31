@@ -6,9 +6,9 @@ const AboutUs = () => {
    return (
       <>
       <div className="about_banner">
-         <h2>About Us</h2>
+         <div data-aos="fade-up"><h2>About Us</h2></div>
       </div>
-         <div className="aboutUs_section">
+         <div className="aboutUs_section" data-aos="fade-up">
             <div className="container">
                <div className="row align-items-center about_wrapper">
                   <div className="col-lg-6">

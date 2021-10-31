@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="container">
                <div className="footer_wrapper">
                   <div className="row">
-                     <div className="col-lg-3 text-white">
+                     <div className="col-lg-3 col-sm-6 text-white mb-4">
                         <div className="footer_item">
                            <div className="footer_title">
                               <h4>About</h4>
@@ -25,7 +25,7 @@ const Footer = () => {
                            </div>
                         </div>
                      </div>
-                     <div className="col-lg-3 text-white">
+                     <div className="col-lg-3 col-sm-6 text-white mb-4">
                         <div className="footer_item">
                            <div className="footer_title mb-4">
                               <h4>Navigation</h4>
@@ -36,19 +36,19 @@ const Footer = () => {
                            <p><Link to="/">Contact</Link></p>
                         </div>
                      </div>
-                     <div className="col-lg-3 text-white">
+                     <div className="col-lg-3 col-sm-6 text-white mb-4">
                         <div className="footer_item">
                            <div className="footer_title">
-                              <h4>Information</h4>
+                              <h4>Support</h4>
                            </div>
-                           <p>General Enquiries</p>
-                           <p>Booking Conditions</p>
+                           <p>Customer Support</p>
+                           <p>Terms & Condition</p>
                            <p>Privacy and Policy</p>
-                           <p>Refund Policy</p>
-                           <p>Call Us</p>
+                           <p>Forum</p>
+                           <p>Tour Guid</p>
                         </div>
                      </div>
-                     <div className="col-lg-3 text-white">
+                     <div className="col-lg-3 col-sm-6 text-white mb-4">
                         <div className="footer_logo mb-4">
                            <img src={logo} alt="" />
                         </div>

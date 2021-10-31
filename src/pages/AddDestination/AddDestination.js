@@ -27,7 +27,7 @@ const AddDestination = () => {
       <div className="addDestination_banner"></div>
          <div className="addDestination_section">
             <div className="container">
-               <div className="addDestination_form">
+               <div className="addDestination_form" data-aos="fade-up">
                   <h4 className="text-center mb-5">Add Destination</h4>
                   <form onSubmit={handleSubmit(onSubmit)}>
                      <input {...register("title")} placeholder="Title" />

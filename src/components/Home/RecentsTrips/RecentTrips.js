@@ -31,16 +31,18 @@ const RecentTrips = () => {
     <>
       <div className="recent_trips">
         <div className="container">
-          <div className="sec_title">
+          <div className="sec_title" data-aos="fade-up">
             <h2>Our Recent Trips</h2>
           </div>
           <div className="row mt-5">
             {
               blogData.map(blog => {
                 return (
-                  <div key={blog.id} className="col-lg-4 mb-4">
+                  <div key={blog.id} className="col-lg-4 mb-4" data-aos="fade-up">
                     <Card>
-                      <Card.Img variant="top" src={blog.img} />
+                      <div className="blog_img">
+                        <Card.Img variant="top" src={blog.img} />
+                      </div>
                       <Card.Body>
                         <Card.Text className="blog_text">
                           {blog.date}
