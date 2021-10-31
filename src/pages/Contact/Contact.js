@@ -5,6 +5,7 @@ import './Contact.css';
 import contactImg from '../../img/contact-us.svg'
 
 const Contact = () => {
+   // contact data
    const contactData = [
       {
          id: 1,

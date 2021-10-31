@@ -18,9 +18,19 @@
 }
 
 /* ------media query ----------------- */
-
+/* ----large device------------ */
+@media (min-width:991px) and (max-width:1200px){
+    .card-body .card-title {
+        font-size: 28px;
+    }
+}
+/* ---- ipad device ---------- */
+@media (min-width:768px) and (max-width:991px){
+    .card-body .card-title {
+        font-size: 24px;
+    }
+}
 /* ----small mobile device ---------- */
-
 @media (min-width:330px) and (max-width:375px){
     .hero_content h2 {
         font-size: 30px;

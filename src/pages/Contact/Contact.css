@@ -55,7 +55,12 @@
 }
 
 /* ------media query ----------------- */
-
+/* ---- ipad device ---------- */
+@media (min-width:991px) and (max-width:1200px){
+    .contact_content p {
+        font-size: 15px;
+    }
+}
 /* ----small mobile device ---------- */
 @media (max-width:375px){
     .contact_banner h3 {

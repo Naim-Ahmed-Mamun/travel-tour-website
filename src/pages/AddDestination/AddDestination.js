@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import './AddDestination.css';
 
 const AddDestination = () => {
+   // use form
    const { register, handleSubmit,reset } = useForm();
    const onSubmit = data => {
       // console.log(data)

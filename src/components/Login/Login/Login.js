@@ -86,13 +86,13 @@ const Login = () => {
          <div className="login_section">
             <div className="container">
                <div className="row align-items-center login_wrapper" data-aos="fade-up">
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                      <div className="login_img">
                         <img src={loginImg} alt="" />
                      </div>
                      <Link to="/register"><p className="register">Create An Account</p></Link>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                      <div className="login_form">
                         <h2>Log In</h2>
                         <form onSubmit={handleSubmit}>
@@ -116,7 +116,7 @@ const Login = () => {
                                  <p className="forgot_text">Forgot Password</p>
                               </div>
                            </div>
-                           <input type="submit" value="Login" />
+                           <input className="text-white" type="submit" value="Login" />
                         </form>
                         <div className="other_login d-flex align-items-center mt-5">
                            <span>Or Login With : </span>

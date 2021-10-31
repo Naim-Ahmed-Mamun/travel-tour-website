@@ -4,11 +4,15 @@ import useAuth from '../../Hooks/useAuth';
 import './MyOrders.css';
 
 const MyOrders = () => {
+   // booking state
    const [userBooking, setUserBooking] = useState([]);
+   // loading state
    const [isLoading,setIsLoading] = useState(true);
+   // use auth
    const { user } = useAuth();
+   // user email
    const userEmail = user?.email;
-   console.log(userEmail);
+   // console.log(userEmail);
 
    useEffect(() => {
       fetch(`https://thawing-bayou-70947.herokuapp.com/userBooking/${userEmail}`)
@@ -44,7 +48,7 @@ const MyOrders = () => {
                   {
                      userBooking.map(booking => {
                         return (
-                           <div key={booking._id} className="col-lg-4">
+                           <div key={booking._id} className="col-lg-4 col-md-6">
                               <div className="card mb-3">
                                  <div className="row g-0">
                                     <div className="col-md-6 booking_img">

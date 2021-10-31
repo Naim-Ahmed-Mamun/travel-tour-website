@@ -35,3 +35,17 @@
     font-family: var(--paragraph-font);
     color: var(--paragraph-color);
 }
+
+/* ------media query ----------------- */
+
+/* ---- ipad device ---------- */
+
+@media (min-width:768px) and (max-width:991px){
+    .service_item{
+        padding: 15px;
+    }
+    .ser_content h3{
+        font-size: 22px;
+        font-weight: 600;
+    }
+}

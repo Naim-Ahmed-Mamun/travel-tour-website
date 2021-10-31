@@ -17,6 +17,27 @@
 .bookingRegistration_section{
     padding: 150px 0 100px;
 }
+.booking_image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--yellow-color);
+    padding: 8px;
+}
+.booking_content h3{
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.booking_content p {
+    max-width: 450px;
+    margin: 0 auto;
+    font-family: var(--paragraph-font);
+    color: var(--paragraph-color);
+}
+.booking_image {
+    text-align: center;
+}
 .bookingRegistration_form{
     max-width: 650px;
     margin: 0 auto;

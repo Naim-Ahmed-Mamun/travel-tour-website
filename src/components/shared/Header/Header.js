@@ -7,8 +7,11 @@ import blackLogo from '../../../img/travel_logo.webp';
 import './Header.css';
 
 const Header = () => {
+   // use auth
    const { user,logout } = useAuth();
+   // set sticky
    const [sticky,setSticky] = useState(false);
+   // sticky condition
    const handleSticky = () => {
       if(window.scrollY > 50){
          setSticky(true)

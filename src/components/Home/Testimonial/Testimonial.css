@@ -29,7 +29,18 @@
 
 /* ------media query ----------------- */
 
-
+/* ----large device------------ */
+@media (min-width:991px) and (max-width:1200px){
+    .testi_content .feedback {
+        height: 280px;
+    }
+}
+/* ---- ipad device ---------- */
+@media (min-width:768px) and (max-width:991px){
+    .testi_content .feedback {
+        height: 250px;
+    }
+}
 /* ---- mobile device ---------- */
 @media (max-width:576px){
     .testi_content .feedback {

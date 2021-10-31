@@ -5,8 +5,11 @@ import { Spinner } from 'react-bootstrap';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
+   // all user state
    const [allUsersBooking, setAllUsersBooking] = useState([]);
+   // pending update state 
    const [isPending,setIsPending] = useState(false);
+   // loading state
    const [isLoading,setIsLoading] = useState(true);
    useEffect(() => {
       fetch(`https://thawing-bayou-70947.herokuapp.com/bookingAllUsers`)
@@ -55,7 +58,7 @@ const ManageAllOrders = () => {
                   {
                      allUsersBooking.map(allBooking => {
                         return (
-                           <div key={allBooking._id} className="col-lg-4" data-aos="fade-up">
+                           <div key={allBooking._id} className="col-lg-4 col-md-6" data-aos="fade-up">
                               <div className="card mb-3">
                                  <div className="row g-0">
                                     <div className="col-md-5 booking_img">

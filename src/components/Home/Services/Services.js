@@ -35,7 +35,7 @@ const Services = () => {
                   {
                      servicesData.map(service => {
                         return (
-                           <div key={service.id} className="col-lg-4 text-center mb-3">
+                           <div key={service.id} className="col-lg-4 col-md-4 text-center mb-3">
                               <div className="service_item">
                                  <div className="ser_icon">
                                     <i>{service.icon}</i>

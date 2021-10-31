@@ -34,7 +34,7 @@ const Destination = () => {
                   {
                      destinations.map(desItem => {
                         return (
-                           <div key={desItem._id} className="col-lg-4 mb-4" data-aos="fade-up">
+                           <div key={desItem._id} className="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
                               <Card>
                                  <div className="destination_img">
                                     <img src={desItem?.imgUrl} alt="" />

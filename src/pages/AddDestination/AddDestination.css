@@ -15,10 +15,11 @@
     left: 0;
 }
 .addDestination_section{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 100px 0;
 }
 .addDestination_form{
     max-width: 650px;
@@ -52,12 +53,14 @@ form input:focus{
 
 /* ------media query ----------------- */
 
+/* ---- ipad device ---------- */
+@media (min-width:768px) and (max-width:991px){
+    .addDestination_form {
+        padding: 50px 50px;
+    }
+}
 /* ----small mobile device ---------- */
 @media (max-width:768px){
-    .addDestination_section {
-        height: auto;
-        padding: 100px 0;
-    }
     .addDestination_form {
         padding: 40px 30px;
     }

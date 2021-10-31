@@ -39,7 +39,7 @@ const Testimonial = () => {
                   {
                      testimonialData.map(testimonial => {
                         return (
-                           <div key={testimonial.id} className="col-lg-4 mb-3" data-aos="fade-up">
+                           <div key={testimonial.id} className="col-lg-4 col-md-6 mb-3" data-aos="fade-up">
                               <div className="shadow p-3">
                                  <div className="testi_img">
                                     <img src={testimonial.img} alt="" />

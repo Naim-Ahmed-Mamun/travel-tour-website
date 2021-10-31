@@ -96,7 +96,7 @@ const Register = () => {
          <div className="register_section">
             <div className="container">
                <div className="row align-items-center register_wrapper" data-aos="fade-up">
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                      <div className="register_img">
                         <img src={registerImg} alt="" />
                      </div>
@@ -104,7 +104,7 @@ const Register = () => {
                         <span>Already have an account ?</span> <Link to="/login"> Login</Link>
                      </div>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                      <div className="login_form">
                         <h2>Register</h2>
                         <form onSubmit={handleRegister}>
@@ -132,7 +132,7 @@ const Register = () => {
                                  <p className="forgot_text">Forgot Password</p>
                               </div>
                            </div>
-                           <input type="submit" value="Register" />
+                           <input className="text-white" type="submit" value="Register" />
                         </form>
                         <div className="other_login d-flex align-items-center mt-5">
                            <span>Or Login With : </span>

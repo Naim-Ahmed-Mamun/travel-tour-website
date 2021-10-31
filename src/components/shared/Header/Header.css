@@ -32,7 +32,14 @@
 }
 
 /* ---------media query--------- */
-
+/* ----large device------------ */
+@media (min-width:991px) and (max-width:1200px){
+    .nav_menu a {
+        margin: 0 8px;
+        font-size: 16px;
+    }
+}
+/* ------responsive navbar-------- */
 @media (max-width:991px){
     #responsive-navbar-nav {
         background: white;
@@ -49,6 +56,6 @@
         background-image: url(../../../img/manu_bar.svg) !important;
     }
     .navbar-toggler:focus {
-        box-shadow: none;
+        box-shadow: none !important;
     }
 }
